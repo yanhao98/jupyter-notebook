@@ -1,4 +1,7 @@
 name: Build and Push Docker Images
+concurrency:
+  group: build-and-push
+  cancel-in-progress: true
 
 on:
   push:
