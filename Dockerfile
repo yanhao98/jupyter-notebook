@@ -37,5 +37,11 @@ RUN set -ex \
     && apt-get install -y tzdata \
     && ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && dpkg-reconfigure -f noninteractive tzdata
-    
-USER ${NB_UID}
+
+# USER ${NB_UID}
+
+ENV GRANT_SUDO=yes
+ENV JUPYTER_ENABLE_LAB=yes
+ENV CHOWN_HOME=yes
+ENV RESTARTABLE=yes
+CMD [ "bash", "-c", "sudo chmod -R 777 /home/jovyan && start-notebook.py" ]
