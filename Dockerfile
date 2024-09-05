@@ -30,6 +30,7 @@ RUN set -ex && python3 -m pip install \
     vnpy-ctastrategy \
     vnpy-sqlite \
     vnpy-mysql \
+    db \
     jupyterlab-language-pack-zh-CN
 
 RUN set -ex \
