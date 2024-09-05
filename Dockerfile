@@ -31,6 +31,7 @@ RUN set -ex && python3 -m pip install \
     vnpy-sqlite \
     vnpy-mysql \
     db \
+    clickhouse_driver \
     jupyterlab-language-pack-zh-CN
 
 RUN set -ex \
