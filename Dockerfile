@@ -27,4 +27,10 @@ RUN set -ex \
     && python3 -m pip install vnpy_ctp \
     && python3 -m pip install vnpy_ctastrategy
 
+RUN set -ex \
+    && apt-get update \
+    && apt-get install -y tzdata \
+    && ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && dpkg-reconfigure -f noninteractive tzdata
+    
 USER ${NB_UID}
