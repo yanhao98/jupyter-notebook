@@ -1,3 +1,6 @@
+# docker run -it --rm veighna/veighna:3.9.2 bash
+
+
 FROM quay.io/jupyter/base-notebook
 
 RUN set -ex \
@@ -24,9 +27,10 @@ RUN set -ex \
 
 RUN set -ex \
     && python3 -m pip install vnpy \
-    && python3 -m pip install vnpy_ctp \
-    && python3 -m pip install vnpy_ctastrategy \
-    && python3 -m pip install vnpy_sqlite \
+    && python3 -m pip install vnpy-ctp \
+    && python3 -m pip install vnpy-ctastrategy \
+    && python3 -m pip install vnpy-sqlite \
+    && python3 -m pip install vnpy-mysql \
     && python3 -m pip install jupyterlab-language-pack-zh-CN
 
 RUN set -ex \
