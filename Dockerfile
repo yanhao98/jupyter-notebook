@@ -12,7 +12,7 @@ RUN set -ex \
     && apt update && apt install -y build-essential --no-install-recommends \
     && pushd /tmp \
     && wget https://pip.vnpy.com/colletion/ta-lib-0.4.0-src.tar.gz -O ta-lib-0.4.0-src.tar.gz \
-    && tar -xvf ta-lib-0.4.0-src.tar.gz \
+    && tar -xf ta-lib-0.4.0-src.tar.gz \
     && cd ta-lib \
     && ./configure --prefix=/usr \
     && make \

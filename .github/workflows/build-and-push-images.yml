@@ -27,4 +27,4 @@ jobs:
           pull: true
           push: ${{ github.event_name != 'pull_request' && github.actor != 'nektos/act' }}
           tags: yanhao98/docker-jupyter-vnpy:latest
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
