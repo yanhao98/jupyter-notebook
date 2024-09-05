@@ -30,4 +30,6 @@ jobs:
           pull: true
           push: ${{ github.event_name != 'pull_request' && github.actor != 'nektos/act' }}
           tags: yanhao98/jupyter-vnpy:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           platforms: linux/amd64

@@ -25,13 +25,12 @@ RUN set -ex \
     && python3 -m pip install TA-Lib==0.4.24 \
     && python3 -c "import talib; print(talib.__version__)"
 
-RUN set -ex \
-    && python3 -m pip install vnpy \
-    && python3 -m pip install vnpy-ctp \
-    && python3 -m pip install vnpy-ctastrategy \
-    && python3 -m pip install vnpy-sqlite \
-    && python3 -m pip install vnpy-mysql \
-    && python3 -m pip install jupyterlab-language-pack-zh-CN
+RUN set -ex && python3 -m pip install \
+    vnpy vnpy-ctp \
+    vnpy-ctastrategy \
+    vnpy-sqlite \
+    vnpy-mysql \
+    jupyterlab-language-pack-zh-CN
 
 RUN set -ex \
     && apt-get update \
