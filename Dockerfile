@@ -26,6 +26,7 @@ RUN set -ex \
     && python3 -m pip install vnpy \
     && python3 -m pip install vnpy_ctp \
     && python3 -m pip install vnpy_ctastrategy \
+    && python3 -m pip install vnpy_sqlite \
     && python3 -m pip install jupyterlab-language-pack-zh-CN
 
 RUN set -ex \
