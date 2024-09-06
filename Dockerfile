@@ -26,13 +26,14 @@ RUN set -ex \
     && python3 -c "import talib; print(talib.__version__)"
 
 RUN set -ex && python3 -m pip install \
-    vnpy vnpy-ctp \
+    vnpy \
+    vnpy-ctp \
     vnpy-ctastrategy \
+    db \
     vnpy-sqlite \
     vnpy-mysql \
     vnpy-ctabacktester \
-    db \
-    clickhouse_driver \
+    clickhouse-driver \
     jupyterlab-language-pack-zh-CN
 
 RUN set -ex \
