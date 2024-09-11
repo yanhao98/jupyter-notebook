@@ -34,7 +34,8 @@ RUN set -ex && python3 -m pip install \
     vnpy-mysql \
     vnpy-ctabacktester \
     clickhouse-driver \
-    jupyterlab-language-pack-zh-CN
+    jupyterlab-language-pack-zh-CN \
+    torch torchvision torchaudio
 
 RUN set -ex \
     && apt-get update \
