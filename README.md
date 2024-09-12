@@ -11,7 +11,10 @@ docker run -d --name notebook -u root \
 ```
 docker run -d --name notebook -u root \
   -v ~/notebook_home_jovyan:/home/jovyan \
+  -e GRANT_SUDO=yes \
   -e JUPYTER_TOKEN=i-want-money \
-  -p 10000:8888 \
-  quay.io/jupyter/all-spark-notebook
+  -e JUPYTER_ENABLE_LAB=yes \
+  -e CHOWN_HOME=yes \
+  -e RESTARTABLE=yes \
+  -p 10000:8888 quay.io/jupyter/all-spark-notebook bash -c "sudo chmod -R 777 /home/jovyan && start-notebook.py"
 ```
