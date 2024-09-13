@@ -2,7 +2,7 @@ FROM quay.io/jupyter/base-notebook
 
 COPY ./scripts /h_scripts
 
-RUN /h_scripts/python-version.sh
+# RUN /h_scripts/python-version.sh
 
 USER root
 
