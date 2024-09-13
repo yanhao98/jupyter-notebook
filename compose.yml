@@ -1,0 +1,17 @@
+services:
+    jupyter:
+        container_name: jupyter
+        restart: unless-stopped
+        user: root
+        volumes:
+            - ./home_jovyan:/home/jovyan
+        environment:
+            - JUPYTER_TOKEN=i-want-money
+        ports:
+            - 8888:8888
+        image: yanhao98/jupyter-vnpy:latest
+        pull_policy: always
+        # build:
+        #     context: .
+        #     dockerfile: Dockerfile.torch
+# docker compose pull; docker compose down -v; docker compose up -d --build; docker compose logs -f;

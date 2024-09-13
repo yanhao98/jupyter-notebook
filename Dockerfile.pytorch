@@ -1,0 +1,24 @@
+FROM quay.io/jupyter/base-notebook
+
+COPY ./scripts /h_scripts
+
+RUN /h_scripts/python-version.sh
+
+USER root
+
+RUN set -ex && python3 -m pip install \
+    jupyterlab-language-pack-zh-CN \
+    pymysql db
+
+RUN set -ex && python3 -m pip install \
+    torch torchvision torchaudio optuna
+
+RUN /h_scripts/localtime.sh
+
+# USER ${NB_UID}
+
+ENV GRANT_SUDO=yes
+ENV JUPYTER_ENABLE_LAB=yes
+ENV CHOWN_HOME=yes
+ENV RESTARTABLE=yes
+CMD [ "bash", "-c", "sudo chmod -R 777 /home/jovyan && start-notebook.py" ]

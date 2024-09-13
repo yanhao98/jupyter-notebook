@@ -7,7 +7,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "Dockerfile"
+      - "Dockerfile.pytorch"
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -27,11 +27,11 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v6
         with:
-          file: ./Dockerfile
+          file: ./Dockerfile.pytorch
           context: .
           pull: true
           push: ${{ github.event_name != 'pull_request' && github.actor != 'nektos/act' }}
-          tags: yanhao98/jupyter-vnpy:latest
+          tags: yanhao98/jupyter-pytorch:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: linux/amd64
+          platforms: linux/amd64, linux/arm64
