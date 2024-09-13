@@ -10,7 +10,7 @@ docker run -d --name notebook -u root \
   -v ~/notebook_home_jovyan:/home/jovyan \
   -e JUPYTER_TOKEN=i-want-money \
   -p 10000:8888 \
-  yanhao98/jupyter-vnpy:latest
+  yanhao98/jupyter-pytorch:latest
 ```
 
 ```
